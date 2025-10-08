@@ -1,0 +1,16 @@
+# Core dependencies
+python-dotenv==1.0.0
+requests==2.31.0
+
+# OpenAI - using latest version
+openai==1.57.0
+
+# Vector store
+chromadb==0.5.23
+
+# Progress bars
+tqdm==4.66.1
+
+# Testing
+pytest==7.4.3
+pytest-cov==4.1.0
