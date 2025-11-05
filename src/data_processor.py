@@ -15,6 +15,7 @@ class SetlistProcessor:
             # Extract basic info
             setlist_id = raw_setlist.get("id")
             artist_name = raw_setlist.get("artist", {}).get("name")
+            artist_mbid = raw_setlist.get("artist", {}).get("mbid")
             
             # Venue information
             venue = raw_setlist.get("venue", {})
@@ -42,6 +43,7 @@ class SetlistProcessor:
             processed = {
                 "setlist_id": setlist_id,
                 "artist_name": artist_name,
+                "artist_mbid": artist_mbid,
                 "venue_name": venue_name,
                 "city": city,
                 "country": country,
