@@ -1,8 +1,12 @@
 import os
 from dataclasses import dataclass
 from dotenv import load_dotenv
+from pathlib import Path
 
 load_dotenv()
+
+# Get the project root directory (parent of src/)
+PROJECT_ROOT = Path(__file__).parent.parent
 
 @dataclass
 class Config:
@@ -11,8 +15,8 @@ class Config:
     OPENAI_API_KEY: str = os.getenv("OPENAI_API_KEY")
     
     # Database paths
-    SQLITE_DB_PATH: str = "data/setlistai.db"
-    CHROMA_DB_PATH: str = "data/chroma_db"
+    SQLITE_DB_PATH: str = str(PROJECT_ROOT / "data" / "setlistai.db")
+    CHROMA_DB_PATH: str = str(PROJECT_ROOT / "data" / "chroma_db")
     
     # Model settings
     EMBEDDING_MODEL: str = "text-embedding-3-small"  # Cost-effective
