@@ -66,8 +66,8 @@ class SetlistRetriever:
             
             # Main setlist (limit to first 15 songs to save tokens)
             if regular_songs:
-                song_list = ', '.join(regular_songs[:15])
-                if len(regular_songs) > 15:
+                song_list = ', '.join(regular_songs[:25])
+                if len(regular_songs) > 25:
                     song_list += f"... ({len(regular_songs)} total songs)"
                 context_parts.append(f"   Setlist: {song_list}\n")
             
